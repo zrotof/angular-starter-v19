@@ -63,7 +63,7 @@ export class PageCommingSoonComponent {
 
       const templateParams = {
         user_email: this.email(),
-        attachment: pdfBase64
+        attachment: pdfBase64 
       };
 
       await emailjs.send(
