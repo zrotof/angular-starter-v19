@@ -1,0 +1,104 @@
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+    <div class="header-content">
+
+        <div class="logo">
+            <img src="/images/logos/femahol-logo.png" alt="Logo" />
+        </div>
+
+        <nav class="lang-switch">
+            <button [class.active]="lang() === 'fr'" (click)="setLang('fr')">
+                {{ 'header.fr' | translate }}
+            </button>
+
+            <span class="divider">|</span>
+
+            <button [class.active]="lang() === 'bas'" (click)="setLang('bas')">
+                {{ 'header.bas' | translate }}
+            </button>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000"
+        [showIndicators]="false" [showNavigators]="false">
+
+        <ng-template let-item pTemplate="item">
+            <div class="carousel-item">
+                <img [ngSrc]="item.src" [alt]="item.alt" fill priority />
+            </div>
+        </ng-template>
+
+    </p-carousel>
+
+    <div class="hero-overlay">
+
+        <h1>{{ 'comingSoon.soon' | translate }}</h1>
+
+        <div class="subscribe">
+            <input type="email" pInputText [placeholder]="'comingSoon.emailPlaceholder' | translate" [value]="email()"
+                (input)="updateEmail($any($event.target).value)" />
+
+            <button pButton type="button" [label]="'comingSoon.join' | translate" (click)="onSubmit()">
+            </button>
+        </div>
+
+        <div class="scroll-down" (click)="scrollToContent()">
+            <i class="pi pi-chevron-down"></i>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECTION NOIRE ================= -->
+
+<section class="about-section" id="content">
+    <div class="my-container">
+
+        <h2>{{ 'comingSoon.aboutTitle' | translate }}</h2>
+
+        <p>{{ 'comingSoon.aboutText' | translate }}</p>
+
+        <h3>{{ 'comingSoon.contactTitle' | translate }}</h3>
+
+        <div class="contact">
+            <p>{{ 'comingSoon.address' | translate }}</p>
+            <p>{{ 'comingSoon.contactInfo' | translate }}</p>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.facebook.com/share/1B68ah7m66/" target="_blank" rel="noopener noreferrer">
+                <i class="pi pi-facebook"></i>
+            </a>
+            <i class="pi pi-twitter"></i>
+            <i class="pi pi-instagram"></i>
+            <i class="pi pi-youtube"></i>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+    <div class="my-container footer-content">
+        <div>{{ 'footer.legal' | translate }}</div>
+        <div>{{ 'footer.cookies' | translate }}</div>
+        <div>{{ 'footer.privacy' | translate }}</div>
+        <div>{{ 'footer.terms' | translate }}</div>
+    </div>
+
+    <div class="copyright">
+        {{ 'footer.copyright' | translate }}
+    </div>
+</footer>

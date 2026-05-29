@@ -3,9 +3,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {
   faAngleDown,
   faAngleRight,
+  faArrowUp,
   faCalendarDays,
   faEnvelope,
   faLocationDot,
+  faMagnifyingGlass,
   faPlay,
   faPhone,
   faQuoteRight,
@@ -34,6 +36,8 @@ export class ConvertStringLabelToFontawesomeIconPipe implements PipeTransform {
         return faAngleDown ;
       case 'faAngleRight':
         return faAngleRight
+      case 'faArrowUp':
+        return faArrowUp
       case 'faCalendarDays':
         return faCalendarDays;
       case 'faEnvelope':
@@ -44,6 +48,8 @@ export class ConvertStringLabelToFontawesomeIconPipe implements PipeTransform {
         return faFacebookF;
       case 'faLocationDot':
         return faLocationDot;
+      case 'faMagnifyingGlass':
+        return faMagnifyingGlass;
       case 'faPlay' :
         return faPlay
       case 'faPhone':

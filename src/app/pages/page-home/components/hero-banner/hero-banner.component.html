@@ -1,0 +1,37 @@
+<div class="hero-banner">
+    <!-- Zone des Slides (s'étend sur tout l'écran) -->
+    <div class="slides-wrapper" [style.transform]="'translateX(' + (currentSlideIndex() * -100) + 'vw)'">
+        @for (slide of slides; track slide.id) {
+        <div class="slide">
+            <img [ngSrc]="slide.backgroundUrl" [alt]="slide.title" fill prioriry>
+            <div class="content header-container">
+                <div class="texts">
+                    <h1 class="title">
+                        {{slide.title}}
+                    </h1>
+                    <a> <span>EN SAVOIR PLUS</span> <fa-icon [icon]="'faArrowUp' | convertStringLabelToFontawesomeIcon">
+                        </fa-icon></a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="overlay-section header-container">
+        <div class="overlay-content">
+            @for (slide of slides; track slide.id) {
+            <div class="overlay-item" [class.active]="currentSlideIndex() === slide.id - 1"
+                (click)="goToSlide(slide.id - 1)">
+
+                <!-- Barre de progression du timer (visuel pur CSS) -->
+                <div class="timer-bar"
+                    [style.animation-play-state]="(currentSlideIndex() === slide.id - 1 && !isPaused()) ? 'running' : 'paused'"
+                    (animationiteration)="onTimerEnd(slide.id - 1)">
+                </div>
+
+                <p class="description">{{ slide.description }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</div>

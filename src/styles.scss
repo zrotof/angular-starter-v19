@@ -1,5 +1,5 @@
-@import "primeicons/primeicons.css";
-@import "variables.scss";
+@import url("primeicons/primeicons.css");
+@import url("variables.scss");
 
 @layer reset, primeng;
 
@@ -9,7 +9,6 @@
     padding: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: "montserrat", sans-serif;
   }
 
   html {
@@ -18,18 +17,20 @@
   }
 
   body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Inter", sans-serif;
+    color: var(--project-black-primary-color);
   }
 
-  .header-container
-   {
+  .header-container {
     max-width: 1400px;
     padding: 0 1rem;
+    width: 100%;
   }
 
   .my-container {
     max-width: 1300px;
     padding: 0 1rem;
+    width: 100%;
   }
 
 
@@ -39,35 +40,36 @@
 
   a {
     text-decoration: none;
+    color: var(--project-black-primary-color);
   }
 
-  .Facebook{
-    &:hover{
-      a{
-        color: #1877F2 !important;      
+  .Facebook {
+    &:hover {
+      a {
+        color: #1877F2 !important;
       }
     }
   }
 
-  .Instagram{
-    &:hover{
-      a{      
+  .Instagram {
+    &:hover {
+      a {
         color: #E1306C !important;
       }
     }
   }
 
-  .Youtube{
-    &:hover{
-      a{      
+  .Youtube {
+    &:hover {
+      a {
         color: #FF0000 !important;
       }
     }
   }
 
-  .Whatsapp{
-    &:hover{
-      a{      
+  .Whatsapp {
+    &:hover {
+      a {
         color: green !important;
       }
     }
